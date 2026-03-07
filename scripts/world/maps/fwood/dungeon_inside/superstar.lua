@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 5,
-  nextobjectid = 92,
+  nextobjectid = 95,
   properties = {
     ["border"] = "castle",
     ["music"] = "jamm_dungeon"
@@ -179,6 +179,19 @@ return {
           shape = "point",
           x = 360,
           y = 1840,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 92,
+          name = "exit",
+          type = "",
+          shape = "point",
+          x = 2220,
+          y = 2380,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1082,6 +1095,22 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "a_dungeon.superstar"
+          }
+        },
+        {
+          id = 94,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 2120,
+          y = 2400,
+          width = 160,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "fwood/dungeon_inside/break_time",
+            ["marker"] = "entry"
           }
         }
       }
