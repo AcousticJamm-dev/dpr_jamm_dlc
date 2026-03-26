@@ -17,11 +17,7 @@ function BellWave:getTarget()
 end
 
 function BellWave:getDamage()
-	if Game.battle.encounter.slash_attack_power >= 25 then
-		return math.huge
-	else
-		return self.attacker and self.attacker.attack * Game.battle.encounter.slash_attack_power or 0
-	end
+	return self.attacker and self.attacker.attack * 10 or 0
 end
 
 function BellWave:shouldSwoon(damage, target, soul)
@@ -29,8 +25,15 @@ function BellWave:shouldSwoon(damage, target, soul)
 end
 
 function BellWave:onDamage(soul)
-    super.onDamage(self, soul)
-	Game.battle.encounter.slash_attack_power = Game.battle.encounter.slash_attack_power + 1
+    local damage = self:getDamage()
+    if damage > 0 then
+        local target = self:getTarget()
+        local battlers = Game.battle:hurt(damage, true, target, self:shouldSwoon(damage, target, soul))
+        soul.inv_timer = self:getInvulnTime()
+        soul:onDamage(self, damage)
+        return battlers
+    end
+    return {}
 end
 
 function BellWave:update()
