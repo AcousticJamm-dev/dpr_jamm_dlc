@@ -15,6 +15,7 @@ function Dummy:init()
     self:addEnemy("fake_jamm", 520, 240)
 
 	self.flee = false
+	self.slash_attack_power = 10
 end
 
 function Dummy:onReturnToWorld(events)
