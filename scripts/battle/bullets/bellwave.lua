@@ -17,11 +17,23 @@ function BellWave:getTarget()
 end
 
 function BellWave:getDamage()
-    return self.attacker and self.attacker.attack * 10 or 0
+	return self.attacker and self.attacker.attack * 10 or 0
 end
 
 function BellWave:shouldSwoon(damage, target, soul)
     return true
+end
+
+function BellWave:onDamage(soul)
+    local damage = self:getDamage()
+    if damage > 0 then
+        local target = self:getTarget()
+        local battlers = Game.battle:hurt(damage, true, target, self:shouldSwoon(damage, target, soul))
+        soul.inv_timer = self:getInvulnTime()
+        soul:onDamage(self, damage)
+        return battlers
+    end
+    return {}
 end
 
 function BellWave:update()
