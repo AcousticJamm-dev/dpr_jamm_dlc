@@ -32,7 +32,7 @@ function Pirate:init()
     self.low_health_text = "* Skelepirate's bones are cracked."
 
     self:registerAct("Immitate")
-    self:registerMarcyAct("Compliment")
+    self:registerAssistAct("jamm", "marcy", "Compliment")
 end
 
 function Pirate:onAct(battler, name)

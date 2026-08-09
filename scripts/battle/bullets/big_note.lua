@@ -20,7 +20,7 @@ function SmallBullet:update()
 		self.wave:spawnBullet("small_note", self.x, self.y, angle, 6)
 		self.wave:spawnBullet("small_note", self.x, self.y, angle + math.rad(45), 6)
 		self.wave:spawnBullet("small_note", self.x, self.y, angle - math.rad(45), 6)
-		Assets.playSound("sing")
+		--Assets.playSound("sing")
 		self:remove()
 	end
 end
