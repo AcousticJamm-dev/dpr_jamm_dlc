@@ -14,13 +14,13 @@ function SmallBullet:update()
     -- For more complicated bullet behaviours, code here gets called every update
 
     super.update(self)
-	
+
 	if self.x <= Game.battle.arena:getLeft() then
 		local angle = MathUtils.angle(self.x, self.y, Game.battle.soul.x, Game.battle.soul.y)
 		self.wave:spawnBullet("small_note", self.x, self.y, angle, 6)
 		self.wave:spawnBullet("small_note", self.x, self.y, angle + math.rad(45), 6)
 		self.wave:spawnBullet("small_note", self.x, self.y, angle - math.rad(45), 6)
-		--Assets.playSound("sing")
+		Assets.playSound("singvoice")
 		self:remove()
 	end
 end
