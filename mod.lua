@@ -24,13 +24,5 @@ function Mod:onRegistered()
 end
 
 function Mod:getPartyNPCProperties(map, pm_id)
-    if map.id == "fwood/entry" then
-        if pm_id == "ceroba" then
-            return { cutscene = "party.ceroba", turn = true }
-        elseif pm_id == "jamm" then
-            return { cutscene = "party.jamm", turn = true }
-        elseif pm_id == "dess" then
-            return { cutscene = "party.dess", turn = true }
-        end
-    end
+    return { cutscene = "party." .. pm_id, turn = true }
 end
