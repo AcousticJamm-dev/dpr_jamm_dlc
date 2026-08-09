@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="23">
+<map version="1.10" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="16" height="18" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="26">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -7,6 +7,7 @@
   <property name="border" value="deep_forest"/>
   <property name="music" value="forgotten_wood"/>
   <property name="name" value="F. Wood - Entrance"/>
+  <property name="spawn_party" type="bool" value="true"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/forgotten_wood.tsx"/>
  <layer id="2" name="Tile Layer 2" width="16" height="18">
@@ -75,7 +76,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="4" name="collision">
+ <objectgroup color="#0000ff" id="4" name="collision">
   <object id="1" x="0" y="0" width="320" height="160"/>
   <object id="3" x="0" y="160" width="80" height="320"/>
   <object id="4" x="280" y="360" width="360" height="120"/>
@@ -84,7 +85,7 @@
   <object id="19" x="40" y="360" width="120" height="360"/>
   <object id="20" x="280" y="480" width="120" height="240"/>
  </objectgroup>
- <objectgroup id="5" name="objects">
+ <objectgroup color="#ff00ff" id="5" name="objects">
   <object id="13" name="savepoint" x="500" y="220" width="40" height="40">
    <properties>
     <property name="text1" value="* The darkness of the forest shines within you."/>
@@ -125,7 +126,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="6" name="markers">
+ <objectgroup color="#7f00ff" id="6" name="markers">
   <object id="9" name="warp" x="140" y="240">
    <point/>
   </object>
@@ -136,6 +137,15 @@
    <point/>
   </object>
   <object id="21" name="entrypoint" x="220" y="680">
+   <point/>
+  </object>
+  <object id="25" name="dess" x="180" y="180">
+   <point/>
+  </object>
+  <object id="24" name="jamm" x="260" y="180">
+   <point/>
+  </object>
+  <object id="23" name="ceroba" x="500" y="140">
    <point/>
   </object>
  </objectgroup>
