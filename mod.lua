@@ -1,5 +1,7 @@
 function Mod:init()
     print("Loaded "..self.info.name.."!")
+
+    MUSIC_VOLUMES["beasts"] = 0.7
 end
 
 function Mod:getUISkin()
